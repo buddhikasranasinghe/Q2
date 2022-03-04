@@ -1,0 +1,72 @@
+{% extends 'patient/base.html' %}
+
+{% block content %}
+
+    <div class="col col-sm-12 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Add Patient</h3>
+                <hr class="mt-2">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" required>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="bday">Birthday</label>
+                                <input type="date" class="form-control" id="bday" name="bday" required>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="cno">Contact Number</label>
+                                <input type="text" class="form-control" id="cno" placeholder="Contact Number" name="cno" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="pimg">Profile Image</label>
+                                <input type="file" class="form-control" id="pimg" name="pimg" required>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="nic">NIC Number</label>
+                                <input type="text" class="form-control" id="nic" placeholder="NIC Number" name="nic" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-12">
+                            <div class="form-group">
+                                <label for="note">Notes</label>
+                                <textarea class="form-control" id="note" rows="3" name="notes"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-12">
+                            <button type="submit" class="btn btn-success">Add Patient</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

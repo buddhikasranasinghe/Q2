@@ -1,0 +1,48 @@
+{% extends 'patient/base.html' %}
+
+{% block content %}
+
+    <div class="col col-sm-12 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Add Presciption</h3>
+                <hr class="mt-2">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col col-sm-6">    
+                            <div class="form-group">
+                                <label for="patient">Patient</label>
+                                <select class="form-control" id="patient" name="patient">
+                                    {% for patient in patients %}
+                                        <option value="{{ patient.id }}" >{{ patient.nic }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-sm-6">
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <input type="text" class="form-control" id="amount" placeholder="Amount" name="amount" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-12">
+                            <div class="form-group">
+                                <label for="note">Notes</label>
+                                <textarea class="form-control" id="note" rows="3" name="notes"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-12">
+                            <button type="submit" class="btn btn-success">Add Prescription</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
